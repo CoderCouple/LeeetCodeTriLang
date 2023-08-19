@@ -1,0 +1,20 @@
+class Solution {
+    func isPalindrome(_ x: Int) -> Bool {
+        var num = String(x);
+        var start = 0
+        var end = num.count-1;
+        
+        while(start <= end){
+            var startChar = num[num.index(num.startIndex, offsetBy: start)]
+            var endChar = num[num.index(num.startIndex, offsetBy: end)]
+            if(startChar != endChar){
+                return false
+            }
+            start = start + 1
+            end = end - 1
+            
+        }
+        
+        return true
+    }
+}
