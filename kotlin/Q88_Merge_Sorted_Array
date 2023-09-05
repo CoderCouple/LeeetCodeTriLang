@@ -1,0 +1,31 @@
+class Solution {
+    fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int): Unit {
+        var num1Pointer = m-1
+        var num2Pointer = n-1
+        var index = nums1.size -1 
+
+        while(num1Pointer >= 0 && num2Pointer >= 0){
+            if(nums1[num1Pointer] >= nums2[num2Pointer]){
+                nums1[index] = nums1[num1Pointer]
+                num1Pointer--
+                index--
+            } else {
+                nums1[index] = nums2[num2Pointer]
+                num2Pointer--
+                index--
+            }
+        }
+
+        while(num1Pointer >= 0){
+            nums1[index] = nums1[num1Pointer]
+            num1Pointer--
+            index--
+        }
+
+        while(num2Pointer >= 0){
+            nums1[index] = nums2[num2Pointer]
+            num2Pointer--
+            index--
+        }
+    }
+}
